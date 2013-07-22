@@ -1,0 +1,66 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>se.elastx.jelastic.component</groupId>
+	<artifactId>mercurial</artifactId>
+	<version>2.6-SNAPSHOT</version>
+	<!-- 
+	     Build machine (Jockes) 
+	     uname -an 
+	     Linux centos5.6.3.4738.diskperf 2.6.32-042stab072.10 
+	     #1 SMP Wed Jan 16 18:54:05 MSK 2013 x86_64 x86_64 x86_64 GNU/Linux
+	  -->
+	<name>${project.artifactId}</name>
+	<packaging>pom</packaging>
+
+	<url>https://github.com/elastx/jelastic-mercurial</url>
+
+	<description>Mavenized redistribution of mercurial as tar.gz</description>
+
+	<scm>
+		<connection>scm:git:ssh://git@github.com/elastx/jelastic-mercurial.git</connection>
+		<developerConnection>scm:git:ssh://git@github.com/elastx/jelastic-mercurial.git</developerConnection>
+		<url>https://github.com/elastx/jelastic-mercurial.git</url>
+	</scm>
+
+	<distributionManagement>
+		<repository>
+			<id>elastx</id>
+			<name>Elastx central repository</name>
+			<url>http://nexus.elastx.net/nexus/content/repositories/releases</url>
+		</repository>
+	</distributionManagement>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-deploy-plugin</artifactId>
+				<version>2.7</version>
+			</plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>build-helper-maven-plugin</artifactId>
+				<version>1.7</version>
+				<executions>
+					<execution>
+						<id>attach-artifacts</id>
+						<phase>package</phase>
+						<goals>
+							<goal>attach-artifact</goal>
+						</goals>
+						<configuration>
+							<artifacts>
+								<artifact>
+									<file>${basedir}/src/main/resources/archive.tar.gz</file>
+									<type>tar.gz</type>
+									<classifier>2.6.32-042stab072.10</classifier>
+								</artifact>
+							</artifacts>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+</project>
