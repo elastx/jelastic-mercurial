@@ -1,0 +1,39 @@
+
+  jelastic-mercurial - Deploy a git binary tar-ball (tar.gz) to elastx nexus server. 
+
+
+DESCRIPTION
+  jelastic-mercurial version manages a mercurial binary tar-ball (src/main/resources/archive.tar.gz)
+  to be used in on jelastic VDS hosts. 
+
+  The git binary tar ball as of now has been built in Jockes VDS environment. 
+
+
+BUILD DISTRIBUTIONS
+
+  STEPS
+  1. Prepare a new mercurial binary from source.
+  2. Update the jelastic-mercurial project on build server. 
+  3. Release jelastic-mercurial project on any machine to elastx Nexus.
+  
+  BUILD SERVER
+  The build server should be a VDS to ensure the same CentOS version that the git binary
+  will work on any other jelastic host. 
+
+  TODO! Descripe build environment structure. Compare to jelastic-git/README
+
+  
+  BUILDING 
+  1. Prepare a new git binary from source.  
+  TODO: To be documented.
+  
+  2. Update the jelastic-mercurial project on build server. 
+  TODO: To be documented.
+  
+  3. Release jelastic-mercurial project on any machine to elastx Nexus.
+  On any machine, do a git pull of jelastic-mercurial and make a maven release. 
+
+
+  
+ 
+  
