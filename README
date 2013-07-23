@@ -1,5 +1,5 @@
 
-  jelastic-mercurial - Deploy a git binary tar-ball (tar.gz) to elastx nexus server. 
+  jelastic-mercurial - Deploy a mercurial binary tar-ball (tar.gz) to elastx nexus server. 
 
 
 DESCRIPTION
